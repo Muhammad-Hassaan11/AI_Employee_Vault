@@ -1,0 +1,13 @@
+# Environment and secrets
+.env
+*.secret
+*.token
+
+# Credentials
+credentials.json
+
+# Python
+__pycache__/
+
+# Obsidian
+.obsidian/
