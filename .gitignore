@@ -9,5 +9,8 @@ credentials.json
 # Python
 __pycache__/
 
+# Watcher state (seen message IDs)
+Watchers/.state/
+
 # Obsidian
 .obsidian/

@@ -1,150 +1,142 @@
 # AI_Employee_Vault
 
-An automated task processing system powered by Claude Code that monitors an Obsidian vault for incoming files and processes them using configurable agent skills.
+An automated AI Employee ("Atlas") powered by Claude Code that monitors an
+Obsidian vault, triages incoming work from Gmail / WhatsApp / a LinkedIn
+content calendar, plans and executes tasks with Agent Skills, and routes
+every sensitive action through a human-in-the-loop approval queue.
 
 ## Tier
 
-**Bronze** - Basic automation tier with file watching and task processing capabilities.
+**Silver — Functional Assistant**
+
+- ✅ Three watcher scripts (Gmail, WhatsApp, LinkedIn) + the original file watcher
+- ✅ Automatic LinkedIn business posting pipeline (calendar → draft → approval → publish)
+- ✅ Claude reasoning loop that creates `PLAN_*.md` files and executes them
+- ✅ MCP server for external action (`vault-email`, sends email via SMTP)
+- ✅ Human-in-the-loop approval workflow (`/Pending_Approval` + approval executor)
+- ✅ Scheduling via Windows Task Scheduler (`Scripts/register_tasks.ps1`)
+- ✅ All AI functionality implemented as Agent Skills in `/Skills/`
 
 ## Architecture
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────┐
-│   Inbox     │────▶│ Needs_Action │────▶│    Done     │
-└─────────────┘     └──────────────┘     └─────────────┘
-                           │
-                           ▼
-                    ┌──────────────┐
-                    │    Plans     │
-                    └──────────────┘
-                           │
-                           ▼
-              ┌─────────────────────────┐
-              │     Claude Code         │
-              │   + Agent Skills        │
-              └─────────────────────────┘
+  Gmail ──▶ gmail_watcher.py ──┐
+  WhatsApp ─▶ whatsapp_watcher ─┼──▶ /Needs_Action ──▶ Claude reasoning loop
+  LinkedIn calendar ─▶ linkedin_watcher ┘                (run_employee.ps1)
+  /Inbox ──▶ file_watcher.py ──┘                              │
+                                              ┌───────────────┼────────────┐
+                                              ▼               ▼            ▼
+                                          /Plans        Agent Skills   /Done + Logs
+                                        (PLAN_*.md)          │         + Dashboard
+                                                             ▼
+                              sensitive actions ──▶ /Pending_Approval (status: pending)
+                                                             │  human edits status
+                                                             ▼
+                                              approval_executor.py (scheduled)
+                                              ├─ email  → SMTP / vault-email MCP
+                                              └─ post   → LinkedIn API (ugcPosts)
 ```
 
-**Components:**
-- **Watcher** - Python script that monitors `/Inbox` for new files
-- **Claude Code** - AI agent that processes tasks
-- **Obsidian** - Vault interface for file management and visualization
-- **Agent Skills** - Configurable skills in `/Skills/` for specialized tasks
+## Components
 
-## Setup Instructions
-
-### Prerequisites
-- Python 3.8+
-- Claude Code CLI installed
-- Obsidian (optional, for UI)
-
-### Installation
-
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   cd AI_Employee_Vault
-   ```
-
-2. Verify Python is available:
-   ```bash
-   python --version
-   ```
-
-3. Ensure folder structure exists:
-   ```
-   AI_Employee_Vault/
-   ├── Inbox/
-   ├── Needs_Action/
-   ├── Plans/
-   ├── Done/
-   ├── Skills/
-   ├── Logs/
-   ├── Claude.md.md
-   ├── Company_Handbook.md.md
-   └── Dashboard.md.md
-   ```
-
-## How to Run
-
-Open **two terminals** in the vault directory:
-
-**Terminal 1 - File Watcher:**
-```bash
-python file_watcher.py
-```
-This monitors `/Inbox` and moves new files to `/Needs_Action` with metadata.
-
-**Terminal 2 - Claude Code:**
-```bash
-claude
-```
-Then run the processing command:
-```
-Process all tasks in /Needs_Action following CLAUDE.md. Use skills from /Skills/. Update Dashboard.md when done.
-```
-
-## File Flow
-
-```
-Inbox/ → Needs_Action/ → Plans/ → Done/
-            │               │
-            │               └── Plan files (PLAN_*.md)
-            │
-            └── Task files with metadata (.md)
-                and original files
-```
-
-1. **Inbox** - Drop new files here
-2. **Needs_Action** - Files are timestamped and metadata is added
-3. **Plans** - Claude creates execution plans for each task
-4. **Done** - Completed tasks and plans are archived here
-
-## Security
-
-### Credentials Handling
-
-All sensitive files are excluded from version control via `.gitignore`:
-
-```gitignore
-# Environment and secrets
-.env
-*.secret
-*.token
-
-# Credentials
-credentials.json
-
-# Python
-__pycache__/
-
-# Obsidian
-.obsidian/
-```
-
-### Best Practices
-- Never commit `.env` files or credential files
-- Store API keys and secrets in `.env` (local only)
-- Review `.gitignore` before adding new file types
-- The `/Pending_Approval` folder is used for sensitive operations requiring human approval
+| Path | Purpose |
+|------|---------|
+| `Watchers/gmail_watcher.py` | Polls Gmail (IMAP) for unread mail → tasks in `/Needs_Action` |
+| `Watchers/whatsapp_watcher.py` | Polls Twilio WhatsApp API for inbound messages → tasks |
+| `Watchers/linkedin_watcher.py` | Turns due rows in `LinkedIn/Content_Calendar.md` into post-drafting tasks |
+| `file_watcher.py` | Original inbox watcher: `/Inbox` → `/Needs_Action` |
+| `Scripts/run_employee.ps1` | Reasoning loop: runs watchers, invokes `claude -p` to plan + execute, then the approval executor |
+| `Scripts/approval_executor.py` | Executes ONLY human-approved actions; archives rejected ones |
+| `Scripts/linkedin_poster.py` | Publishes approved posts via the LinkedIn ugcPosts API |
+| `Scripts/register_tasks.ps1` | Registers/unregisters all Task Scheduler jobs |
+| `MCP/email_server.py` | Stdio MCP server (`vault-email`) exposing `send_email` + `check_smtp_config` |
+| `.mcp.json` | Registers the MCP server with Claude Code |
+| `LinkedIn/Content_Calendar.md` | Sales-content schedule driving automatic LinkedIn posting |
 
 ## Agent Skills
 
-Skills are located in `/Skills/` as `SKILL.md.md` files:
+All AI functionality is skill-driven (`/Skills/*/SKILL.md`, per the
+[Agent Skills spec](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)):
 
 | Skill | Purpose |
 |-------|---------|
-| Summarize File | Extract key points and action items from documents |
-| Process Task | Handle new task files with prioritization and planning |
+| `process-task` | End-to-end task handling: read → plan → execute → archive |
+| `summarize-file` | Extract overview, key points, and action items from files |
+| `linkedin-post` | Draft sales-oriented LinkedIn posts → `/Pending_Approval` |
+| `send-email` | Draft emails → `/Pending_Approval` → send after approval |
+| `handle-approvals` | Report and process the approval queue |
 
-## Key Files
+## Human-in-the-Loop Approval Workflow
 
-| File | Purpose |
-|------|---------|
-| `Claude.md.md` | Master instructions for the AI Employee |
-| `Company_Handbook.md.md` | Rules and priority levels |
-| `Dashboard.md.md` | Status board with recent activity |
-| `file_watcher.py` | Python script for inbox monitoring |
+1. Atlas writes any sensitive action (email, LinkedIn post) to
+   `/Pending_Approval/*.md` with `status: pending` in the frontmatter.
+2. **You** review the file in Obsidian and change the status to
+   `approved` or `rejected`.
+3. `Scripts/approval_executor.py` (scheduled every 10 min, or run manually)
+   sends/publishes approved items and archives rejected ones to `/Done`.
+   Nothing is ever sent without your explicit approval — the MCP server
+   refuses `send_email` calls unless `approved=true`, which Atlas may only
+   set after your sign-off.
+
+## Setup
+
+### 1. Prerequisites
+
+- Python 3.8+ (stdlib only — no pip installs needed)
+- Claude Code CLI
+- Obsidian (optional, for reviewing/approving)
+
+### 2. Configure credentials
+
+```powershell
+Copy-Item .env.example .env
+# then edit .env with your values:
+#   GMAIL_ADDRESS / GMAIL_APP_PASSWORD  (Gmail watcher, IMAP)
+#   SMTP_USER / SMTP_PASSWORD           (email sending)
+#   TWILIO_*                            (WhatsApp watcher)
+#   LINKEDIN_ACCESS_TOKEN / LINKEDIN_PERSON_URN  (LinkedIn publishing)
+```
+
+Watchers exit gracefully if their credentials aren't set, so you can enable
+channels one at a time. `.env` is gitignored.
+
+### 3. Schedule everything (Task Scheduler)
+
+```powershell
+powershell -File Scripts\register_tasks.ps1          # register all jobs
+powershell -File Scripts\register_tasks.ps1 -Unregister  # remove them
+```
+
+Registered jobs: Gmail watcher (15 min), WhatsApp watcher (15 min),
+LinkedIn watcher (60 min), approval executor (10 min), reasoning loop (30 min).
+
+### 4. Or run manually
+
+```powershell
+powershell -File Scripts\run_employee.ps1   # one full cycle
+python Watchers\gmail_watcher.py --loop 300 # or watch continuously
+```
+
+## LinkedIn Sales Posting
+
+Add rows to `LinkedIn/Content_Calendar.md`:
+
+```
+| 2026-07-09 | Case study: automating email triage with AI | pending |
+```
+
+When the date arrives, the LinkedIn watcher creates a drafting task; Atlas
+drafts the post with the `linkedin-post` skill into `/Pending_Approval`;
+you approve it; the approval executor publishes it via the LinkedIn API.
+
+## Security
+
+- `.env`, `*.secret`, `*.token`, `credentials.json`, and `Watchers/.state/`
+  are gitignored — never commit credentials.
+- The Gmail watcher connects read-only and never modifies your mailbox.
+- Sends/publishes happen only through the approval executor or an
+  explicitly approved MCP call. The Company Handbook forbids sending any
+  message without human approval.
 
 ## License
 
