@@ -25,6 +25,7 @@ Write-Log "Run started"
 python "$VaultRoot\Watchers\gmail_watcher.py"
 python "$VaultRoot\Watchers\whatsapp_watcher.py"
 python "$VaultRoot\Watchers\linkedin_watcher.py"
+python "$VaultRoot\Watchers\filesystem_watcher.py"
 
 # --- Step 2: If there is work, run the Claude reasoning loop -----------------
 $Tasks = Get-ChildItem -Path "$VaultRoot\Needs_Action" -Filter *.md -File -ErrorAction SilentlyContinue

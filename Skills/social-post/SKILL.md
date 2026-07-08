@@ -1,5 +1,6 @@
 ---
 name: social-post
+aliases: ["social-post skill"]
 description: Draft Facebook, Instagram, or X (Twitter) posts for human approval, and generate engagement summaries. Use for any task about posting to or reviewing social media.
 ---
 
@@ -41,3 +42,12 @@ Use the vault-social MCP tools: `facebook_summary`, `instagram_summary`,
 without credentials report an ERROR line - include that as "not configured"
 rather than failing the task. Write the summary into the task's output
 (or the CEO briefing when called from the weekly-audit skill).
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[linkedin-post skill]]
+- Related skill/doc: [[handle-approvals skill]]

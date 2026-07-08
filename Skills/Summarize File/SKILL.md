@@ -1,5 +1,6 @@
 ---
 name: summarize-file
+aliases: ["summarize-file skill"]
 description: Summarize a file from /Needs_Action into a one-sentence overview, 3-5 key points, and any action items, then archive it. Use when a task file needs to be condensed or its key information extracted.
 ---
 
@@ -37,3 +38,11 @@ When a file in /Needs_Action needs to be summarized.
 **Action Items:**
 - [ ] [action if any]
 ```
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[process-task skill]]

@@ -141,3 +141,8 @@ you approve it; the approval executor publishes it via the LinkedIn API.
 ## License
 
 Personal use - Muhammad Hassaan
+
+<!-- graph-links -->
+## Related
+
+- [[CLAUDE]] · [[Dashboard]] · [[Company_Handbook]] · [[Skills_Index]]

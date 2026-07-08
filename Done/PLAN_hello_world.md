@@ -14,3 +14,6 @@ Summarize text file containing personal introduction
 - [ ] Step 6: Write log entry
 
 ## Status: Completed
+
+<!-- graph-links -->
+Related: [[20260228_121638_hello world]]

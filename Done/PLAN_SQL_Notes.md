@@ -19,3 +19,6 @@ Process and summarize SQL notes PDF document
 - Will update metadata file with available information
 
 ## Status: Completed
+
+<!-- graph-links -->
+Related: [[20260228_115404_SQL (notes) (1)]] · [[summarize-file skill]]

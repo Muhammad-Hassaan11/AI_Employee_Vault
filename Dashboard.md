@@ -29,3 +29,8 @@ Last Updated: 2026-07-07
 - Credentials not yet configured: copy `.env.example` to `.env` and fill in Gmail, SMTP, Twilio, LinkedIn, Odoo, Meta (Facebook/Instagram), and X values to activate the watchers, senders, and MCP servers.
 - Odoo not yet running: `docker compose up -d` in /Odoo, create database "business", install Invoicing, then set ODOO_* in .env.
 - Re-run `Scripts\register_tasks.ps1` to add the new AIEmployee-WeeklyAudit scheduled task.
+
+<!-- graph-links -->
+## Related
+
+- [[Company_Handbook]] · [[README]] · [[CLAUDE]] · [[Business_Profile]] · [[Personal_Profile]] · [[Content_Calendar]] · [[Skills_Index]]

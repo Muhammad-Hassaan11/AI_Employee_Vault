@@ -100,3 +100,8 @@ Every time you run, do this in order:
 - ALWAYS update Dashboard.md
 - ALWAYS log your actions
 - If unsure, move task to /Pending_Approval
+
+<!-- graph-links -->
+## Vault Map
+
+- [[Dashboard]] · [[Company_Handbook]] · [[Business_Profile]] · [[Personal_Profile]] · [[Skills_Index]] · [[Content_Calendar]]

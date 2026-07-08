@@ -1,5 +1,6 @@
 ---
 name: handle-approvals
+aliases: ["handle-approvals skill"]
 description: Review the human-in-the-loop approval queue in /Pending_Approval - report what is waiting, execute approved items via the approval executor, and archive rejected ones. Use when asked about pending approvals or to process the approval queue.
 ---
 
@@ -35,3 +36,12 @@ description: Review the human-in-the-loop approval queue in /Pending_Approval - 
 
 - NEVER change a status yourself — approval decisions belong to the human
 - NEVER bypass the executor to send/publish directly
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[send-email skill]]
+- Related skill/doc: [[social-post skill]]

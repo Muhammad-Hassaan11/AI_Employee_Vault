@@ -23,3 +23,6 @@ Save the draft to /Pending_Approval for human review — NEVER publish directly.
 
 ## Status History
 - 2026-07-07 11:34:17: Task created by linkedin watcher
+
+<!-- graph-links -->
+Related: [[PLAN_linkedin_post_ai_employee_10_hours]] · [[LINKEDIN_ai_employee_10_hours]]

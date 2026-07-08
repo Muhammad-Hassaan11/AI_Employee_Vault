@@ -13,3 +13,6 @@ Skill: linkedin-post
 - [x] Step 5: Update Dashboard.md (Needs My Approval +1) and log the action
 
 ## Status: Complete - awaiting human approval of the draft
+
+<!-- graph-links -->
+Related: [[20260707_113417_linkedin_Draft_LinkedIn_post_How_an_AI_Employee_s]] · [[LINKEDIN_ai_employee_10_hours]] · [[linkedin-post skill]]

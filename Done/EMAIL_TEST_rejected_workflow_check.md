@@ -10,3 +10,6 @@ This is a test action used to verify the approval executor's rejected-item path.
 
 ## Execution Result
 - 2026-07-07 11:35:27: REJECTED by human - no action taken
+
+<!-- graph-links -->
+Related: [[handle-approvals skill]] · [[Dashboard]]

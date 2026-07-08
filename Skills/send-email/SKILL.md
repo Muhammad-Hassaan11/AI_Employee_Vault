@@ -1,5 +1,6 @@
 ---
 name: send-email
+aliases: ["send-email skill"]
 description: Draft an email reply or outreach message and route it through /Pending_Approval; after human approval it is sent via the vault-email MCP server (send_email tool) or the approval executor. Use whenever a task requires emailing someone — replies to Gmail watcher tasks, follow-ups, or outreach.
 ---
 
@@ -41,3 +42,11 @@ created_at: [YYYY-MM-DD HH:MM:SS]
 - NEVER call send_email with approved=true unless the human already
   approved the draft in /Pending_Approval
 - Keep the body plain text; it is sent verbatim
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[handle-approvals skill]]

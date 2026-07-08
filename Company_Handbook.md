@@ -61,3 +61,8 @@
 - HIGH: Handle within 4 hours
 - NORMAL: Handle within 24 hours
 - LOW: Handle within 1 week
+
+<!-- graph-links -->
+## Related
+
+- [[CLAUDE]] · [[Dashboard]] · [[Business_Profile]] · [[Personal_Profile]] · [[Skills_Index]]

@@ -1,5 +1,6 @@
 ---
 name: weekly-audit
+aliases: ["weekly-audit skill"]
 description: Run the weekly business + accounting audit and generate the CEO briefing. Use when a task asks for a weekly audit, business review, or CEO briefing.
 ---
 
@@ -64,3 +65,11 @@ Create `/Briefings/CEO_Briefing_[YYYY-MM-DD].md`:
 - Log to /Logs/[today].md and append an audit entry meaning
   "weekly_audit completed" (the run script does this automatically)
 - Move the audit task file and plan to /Done
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[Business_Profile]]

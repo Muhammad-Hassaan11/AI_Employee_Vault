@@ -1,5 +1,6 @@
 ---
 name: linkedin-post
+aliases: ["linkedin-post skill"]
 description: Draft a sales-oriented LinkedIn post about the business and route it to /Pending_Approval for human review before publishing. Use for any task about creating, drafting, or scheduling LinkedIn content (e.g. tasks created by the LinkedIn watcher from the content calendar).
 ---
 
@@ -40,3 +41,12 @@ created_at: [YYYY-MM-DD HH:MM:SS]
 
 - NEVER set status to approved yourself — only the human does that
 - One post per file; the body is published verbatim, so no extra headings
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[Content_Calendar]]
+- Related skill/doc: [[social-post skill]]

@@ -19,3 +19,6 @@ The result: our own operation reclaimed more than 10 hours a week — time that 
 If you're a small business owner curious what this could look like for you, send me a DM or book a quick call. I'll walk you through the exact setup, no strings attached.
 
 #AIAutomation #SmallBusiness #Productivity #AIEmployee #WorkflowAutomation
+
+<!-- graph-links -->
+Related: [[Content_Calendar]] · [[linkedin-post skill]] · [[Dashboard]]

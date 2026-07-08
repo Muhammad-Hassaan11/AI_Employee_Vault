@@ -1,5 +1,6 @@
 ---
 name: process-task
+aliases: ["process-task skill"]
 description: Process a new task file in /Needs_Action end to end - read it, determine priority per the Company Handbook, write a plan in /Plans, execute (routing sensitive steps to /Pending_Approval), then archive to /Done and update the Dashboard and Logs. Use whenever a new task file appears in /Needs_Action.
 ---
 
@@ -38,3 +39,12 @@ Priority: [level]
 
 ## Status: In Progress
 ```
+
+<!-- graph-links -->
+## Related
+
+- Index: [[Skills_Index]]
+- Rules: [[Company_Handbook]]
+- Board: [[Dashboard]]
+- Related skill/doc: [[send-email skill]]
+- Related skill/doc: [[summarize-file skill]]

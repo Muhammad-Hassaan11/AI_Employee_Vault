@@ -19,3 +19,8 @@ Add a row per post you want published:
 - Every post ends with a call-to-action (DM us / book a call)
 - 3-5 relevant hashtags, e.g. #AIAutomation #SmallBusiness #Productivity
 - Drafts ALWAYS go through /Pending_Approval before publishing
+
+<!-- graph-links -->
+## Related
+
+- [[linkedin-post skill]] · [[Business_Profile]] · [[Dashboard]]
