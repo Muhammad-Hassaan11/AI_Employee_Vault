@@ -7,7 +7,7 @@ has explicitly approved by editing the frontmatter to `status: approved`.
 
 Action file format (created by Atlas via skills):
     ---
-    type: email | linkedin_post
+    type: email | linkedin_post | facebook_post | instagram_post | tweet
     status: pending          <- human changes to: approved | rejected
     to: someone@example.com  (email only)
     subject: ...             (email only)
@@ -66,6 +66,21 @@ def execute_linkedin(meta: dict, body: str) -> str:
     return post_to_linkedin(body)
 
 
+def execute_facebook(meta: dict, body: str) -> str:
+    from social_poster import post_facebook  # same Scripts dir
+    return post_facebook(body)
+
+
+def execute_instagram(meta: dict, body: str) -> str:
+    from social_poster import post_instagram
+    return post_instagram(body, meta.get("image_url", ""))
+
+
+def execute_tweet(meta: dict, body: str) -> str:
+    from social_poster import post_tweet
+    return post_tweet(body)
+
+
 def move_to_done(path: Path, outcome: str) -> None:
     DONE_DIR.mkdir(parents=True, exist_ok=True)
     text = path.read_text(encoding="utf-8")
@@ -104,6 +119,12 @@ def process_pending() -> int:
                 result = execute_email(meta, body)
             elif action_type == "linkedin_post":
                 result = execute_linkedin(meta, body)
+            elif action_type == "facebook_post":
+                result = execute_facebook(meta, body)
+            elif action_type == "instagram_post":
+                result = execute_instagram(meta, body)
+            elif action_type == "tweet":
+                result = execute_tweet(meta, body)
             else:
                 result = f"ERROR: unknown action type '{action_type}'"
         except Exception as e:

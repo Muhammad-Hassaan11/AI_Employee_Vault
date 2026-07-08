@@ -36,6 +36,46 @@ Every time you run, do this in order:
 - Update /Dashboard.md with what you did
 - Write a log entry in /Logs/[today].md
 
+## Cross-Domain Integration (Gold Tier)
+
+- Tasks carry `domain: personal | business` frontmatter; route per the
+  rules in /Business/Business_Profile.md
+- Read /Personal/Personal_Profile.md and /Business/Business_Profile.md
+  before acting so tone and boundaries fit the domain
+- Personal content is never published or mixed into business output
+
+## MCP Servers (multiple, one per action type)
+
+- vault-email  (/MCP/email_server.py)  - send_email; approval-gated
+- vault-odoo   (/MCP/odoo_server.py)   - Odoo Community 19 accounting via
+  JSON-RPC: invoices, expenses, customers, accounting_summary; writes are
+  DRAFT-only (self-hosted instance: /Odoo/docker-compose.yml)
+- vault-social (/MCP/social_server.py) - Facebook, Instagram, X posting
+  (approval-gated) + engagement summaries
+
+## Weekly Audit & CEO Briefing
+
+- /Scripts/weekly_audit.ps1 (scheduled weekly) drops a weekly_audit task;
+  follow /Skills/weekly-audit/SKILL.md to gather Odoo, social, and
+  Logs/audit.jsonl data and write /Briefings/CEO_Briefing_[date].md
+
+## Persistence (Ralph Wiggum Loop)
+
+- /ralph-loop "<task>" --completion-promise TASK_COMPLETE --max-iterations 10
+  (or Scripts/ralph_loop.ps1) keeps you working until done: the Stop hook
+  (Scripts/ralph_stop_hook.py, state in Scripts/.ralph/state.json) blocks
+  exit and re-injects the prompt until your reply ends with the completion
+  promise or max iterations is hit
+- Only output the completion promise when the task is verifiably complete
+  (e.g. task files really moved to /Done)
+
+## Error Recovery & Audit Logging
+
+- Wrap flaky external calls with vault_env.with_retry; on persistent
+  failure degrade gracefully (report the section as unavailable, continue)
+- Every action gets a structured entry in Logs/audit.jsonl in addition to
+  the human-readable /Logs/[date].md
+
 ## Automation Components (Silver Tier)
 
 - /Watchers/ - Gmail, WhatsApp, and LinkedIn watchers that feed /Needs_Action

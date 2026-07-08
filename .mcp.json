@@ -3,6 +3,14 @@
     "vault-email": {
       "command": "python",
       "args": ["MCP/email_server.py"]
+    },
+    "vault-odoo": {
+      "command": "python",
+      "args": ["MCP/odoo_server.py"]
+    },
+    "vault-social": {
+      "command": "python",
+      "args": ["MCP/social_server.py"]
     }
   }
 }

@@ -32,8 +32,28 @@
 - Only the human may change status to `approved` or `rejected`
 - Execution happens only via Scripts/approval_executor.py (or the
   vault-email MCP `send_email` tool with approved=true after sign-off)
-- Approval file types: `email` (needs `to:` and `subject:`) and
-  `linkedin_post` (body is published verbatim)
+- Approval file types: `email` (needs `to:` and `subject:`),
+  `linkedin_post`, `facebook_post`, `tweet` (body published verbatim), and
+  `instagram_post` (also needs `image_url:` in the frontmatter)
+- The vault-social MCP post tools are equally gated: Atlas never calls
+  them with approved=true; only the approval executor does
+- Odoo writes are limited to draft records (customers, draft invoices);
+  posting invoices and registering payments is done by the human in Odoo
+
+## Cross-Domain Rules
+
+- Every task is routed `domain: personal | business` per
+  /Business/Business_Profile.md; personal content is never posted
+  publicly or mixed into business deliverables (see Personal_Profile)
+
+## Error Recovery & Audit
+
+- Components retry transient failures with backoff (vault_env.with_retry)
+  and degrade gracefully: an unavailable service reports its status
+  instead of crashing the run
+- Every component writes structured entries to Logs/audit.jsonl; the
+  weekly audit (Skills/weekly-audit) reviews it and produces the CEO
+  briefing in /Briefings
 
 ## Priority Levels
 

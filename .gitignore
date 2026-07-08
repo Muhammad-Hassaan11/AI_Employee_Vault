@@ -14,3 +14,5 @@ Watchers/.state/
 
 # Obsidian
 .obsidian/
+# Ralph loop runtime state
+Scripts/.ralph/

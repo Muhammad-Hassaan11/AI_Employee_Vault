@@ -1,0 +1,11 @@
+{"ts": "2026-07-07T22:17:06", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 1, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:07", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 2, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:07", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 3, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:25", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 1, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:25", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 2, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:26", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 3, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:26", "component": "ralph-loop", "action": "loop_finished", "status": "ok", "details": {"reason": "max iterations (3) reached without completion", "iterations": 3}}
+{"ts": "2026-07-07T22:17:40", "component": "ralph-loop", "action": "loop_iteration", "status": "ok", "details": {"iteration": 1, "max_iterations": 3}}
+{"ts": "2026-07-07T22:17:40", "component": "ralph-loop", "action": "loop_finished", "status": "ok", "details": {"reason": "completion promise 'TASK_COMPLETE' found", "iterations": 0}}
+{"ts": "2026-07-07T22:17:40", "component": "ralph-loop", "action": "loop_finished", "status": "ok", "details": {"reason": "max iterations (3) reached without completion", "iterations": 3}}
+{"ts": "2026-07-07T22:17:54", "component": "social-mcp", "action": "tweet_blocked", "status": "blocked"}

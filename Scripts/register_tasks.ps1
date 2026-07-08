@@ -14,7 +14,8 @@ $Tasks = @(
     @{ Name = "AIEmployee-WhatsAppWatcher"; Cmd = "$Python `"$VaultRoot\Watchers\whatsapp_watcher.py`""; Minutes = 15 },
     @{ Name = "AIEmployee-LinkedInWatcher"; Cmd = "$Python `"$VaultRoot\Watchers\linkedin_watcher.py`""; Minutes = 60 },
     @{ Name = "AIEmployee-ApprovalExecutor"; Cmd = "$Python `"$VaultRoot\Scripts\approval_executor.py`""; Minutes = 10 },
-    @{ Name = "AIEmployee-ReasoningLoop";   Cmd = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$VaultRoot\Scripts\run_employee.ps1`""; Minutes = 30 }
+    @{ Name = "AIEmployee-ReasoningLoop";   Cmd = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$VaultRoot\Scripts\run_employee.ps1`""; Minutes = 30 },
+    @{ Name = "AIEmployee-WeeklyAudit";     Cmd = "powershell -NoProfile -ExecutionPolicy Bypass -File `"$VaultRoot\Scripts\weekly_audit.ps1`""; Minutes = 10080 }
 )
 
 foreach ($t in $Tasks) {
