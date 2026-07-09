@@ -1,10 +1,22 @@
-# Environment and secrets
+# Environment and secrets — NEVER sync between agents (Platinum rule):
+# the git-synced vault carries markdown/state only; credentials, tokens
+# and sessions stay on the machine they belong to.
 .env
 *.secret
 *.token
+*.session
+*.pem
+*.key
 
 # Credentials
 credentials.json
+
+# WhatsApp / browser sessions (Local-only, must never reach the cloud)
+.sessions/
+whatsapp-session/
+
+# Odoo backups (cloud VM local only)
+Odoo/backups/
 
 # Python
 __pycache__/

@@ -1,0 +1,16 @@
+# One cloud reasoning cycle (sync -> watchers -> claim -> Claude drafts ->
+# health -> sync). Triggered by ai-employee.timer every 30 minutes.
+[Unit]
+Description=AI Employee - cloud reasoning cycle
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=__VM_USER__
+WorkingDirectory=__VAULT_DIR__
+Environment=AGENT_ROLE=cloud
+# claude CLI is installed via npm -g; make sure it's on PATH for systemd.
+Environment=PATH=/usr/local/bin:/usr/bin:/bin:/home/__VM_USER__/.npm-global/bin
+ExecStart=/usr/bin/bash __VAULT_DIR__/Scripts/run_employee_cloud.sh
+TimeoutStartSec=1800

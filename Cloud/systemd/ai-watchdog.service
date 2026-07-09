@@ -1,0 +1,19 @@
+# Keeps the cloud-owned watchers alive 24/7 on the Oracle VM.
+# Installed by Cloud/setup_oracle_vm.sh (paths/user are templated there).
+[Unit]
+Description=AI Employee - watcher watchdog (cloud work zone)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=__VM_USER__
+WorkingDirectory=__VAULT_DIR__
+Environment=AGENT_ROLE=cloud
+# WhatsApp is deliberately excluded: its session never exists on the cloud.
+ExecStart=/usr/bin/python3 __VAULT_DIR__/Scripts/watchdog.py --only gmail linkedin filesystem
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

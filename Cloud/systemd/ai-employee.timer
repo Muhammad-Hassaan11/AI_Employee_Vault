@@ -1,0 +1,11 @@
+# Fires the cloud reasoning cycle every 30 minutes, starting 2 min after boot.
+[Unit]
+Description=AI Employee - cloud reasoning cycle schedule
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=30min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

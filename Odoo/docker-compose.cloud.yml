@@ -1,0 +1,91 @@
+# Odoo Community 19 for the ALWAYS-ON CLOUD VM (Platinum tier).
+# Adds over the local docker-compose.yml:
+#   - Caddy reverse proxy with automatic HTTPS (Let's Encrypt)
+#   - nightly pg_dump backups kept 7 days (Odoo/backups/)
+#   - container healthchecks + unless-stopped restart policy
+#
+# Requires ODOO_DOMAIN in the environment (or vault .env exported), a DNS
+# A-record for that domain pointing at this VM, and ports 80/443 open.
+#
+# Start:   sudo docker compose -f Odoo/docker-compose.cloud.yml up -d
+# Verify:  curl -I https://$ODOO_DOMAIN/web/login
+# Backups: ls Odoo/backups/
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: ${ODOO_DB_PASSWORD:-odoo}
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 30s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  odoo:
+    image: odoo:19
+    depends_on:
+      db:
+        condition: service_healthy
+    # No public port: only Caddy talks to Odoo. The MCP server on this VM
+    # reaches it through Caddy (https://$ODOO_DOMAIN) or the docker network.
+    expose:
+      - "8069"
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: ${ODOO_DB_PASSWORD:-odoo}
+    command: odoo --proxy-mode
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+    healthcheck:
+      test: ["CMD-SHELL", "python3 -c \"import urllib.request; urllib.request.urlopen('http://localhost:8069/web/login', timeout=5)\""]
+      interval: 60s
+      timeout: 10s
+      retries: 5
+      start_period: 120s
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2
+    depends_on:
+      - odoo
+    ports:
+      - "80:80"
+      - "443:443"
+    environment:
+      ODOO_DOMAIN: ${ODOO_DOMAIN:?set ODOO_DOMAIN to your Odoo DNS name}
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    restart: unless-stopped
+
+  backup:
+    image: postgres:16
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PGPASSWORD: ${ODOO_DB_PASSWORD:-odoo}
+    volumes:
+      - ./backups:/backups
+    entrypoint: >
+      bash -c 'while true; do
+        ts=$$(date +%F);
+        pg_dumpall -h db -U odoo > /backups/odoo_$$ts.sql
+          && echo "backup written: odoo_$$ts.sql";
+        ls -1t /backups/odoo_*.sql | tail -n +8 | xargs -r rm --;
+        sleep 86400;
+      done'
+    restart: unless-stopped
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:
+  caddy-data:
+  caddy-config:

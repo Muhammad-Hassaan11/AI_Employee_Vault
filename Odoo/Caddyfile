@@ -1,0 +1,10 @@
+# Caddy reverse proxy for cloud Odoo: automatic HTTPS via Let's Encrypt.
+# ODOO_DOMAIN comes from the compose environment (e.g. odoo.example.com).
+{$ODOO_DOMAIN} {
+	reverse_proxy odoo:8069
+	encode gzip
+
+	# Odoo longpolling/websocket bus
+	@websocket path /websocket* /longpolling/*
+	reverse_proxy @websocket odoo:8069
+}

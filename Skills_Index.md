@@ -11,6 +11,7 @@ all appear as **"SKILL"** in the graph; hover or click a dot to see which one.
 - [[social-post skill]] — draft Facebook / Instagram / X posts + summaries
 - [[handle-approvals skill]] — work the /Pending_Approval queue
 - [[weekly-audit skill]] — run the weekly audit → CEO briefing
+- [[cloud-triage skill]] — cloud agent's draft-only work zone (Platinum)
 
 ## Related
 

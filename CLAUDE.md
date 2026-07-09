@@ -36,6 +36,33 @@ Every time you run, do this in order:
 - Update /Dashboard.md with what you did
 - Write a log entry in /Logs/[today].md
 
+## Two-Agent Operation (Platinum Tier)
+
+The AI Employee runs as TWO cooperating agents sharing this vault via git:
+
+- **Cloud agent** (Oracle VM, AGENT_ROLE=cloud, 24/7): email triage,
+  draft replies, social post drafts — DRAFT-ONLY. Runs
+  /Scripts/run_employee_cloud.sh via systemd. Uses the cloud-triage skill.
+- **Local agent** (this PC, AGENT_ROLE=local): approvals, WhatsApp,
+  payments/banking, and every final send/post via the approval executor.
+
+Rules you MUST follow, whichever agent you are:
+
+1. **Claim-by-move**: before working a task, it must be moved from
+   /Needs_Action to /In_Progress/<agent>/ (Scripts/claim_task.py does
+   this). Never touch files under the OTHER agent's In_Progress folder.
+2. **Work zones**: cloud may only claim tasks with source gmail /
+   linkedin / calendar / file. WhatsApp, payments, banking are local-only;
+   cloud moves such tasks back to /Needs_Action with a note.
+3. **Single-writer Dashboard**: only the LOCAL agent edits Dashboard.md.
+   The cloud agent writes /Updates/UPDATE_[ts]_[slug].md instead;
+   Scripts/merge_updates.py (local) merges them into the Dashboard.
+4. **Secrets never sync**: the git vault carries markdown/state only.
+   Never write credentials into vault files. Cloud has no WhatsApp
+   session, no SMTP send, no banking values.
+5. **Sync bookends**: every run starts with vault_sync pull and ends with
+   vault_sync push (Scripts/vault_sync.sh on cloud, .ps1 on local).
+
 ## Cross-Domain Integration (Gold Tier)
 
 - Tasks carry `domain: personal | business` frontmatter; route per the
