@@ -1,6 +1,6 @@
 ---
 type: linkedin_post
-status: pending
+status: approved
 topic: "Case study: automating email triage and follow-ups with AI"
 created_at: 2026-07-11 09:56:00
 ---
@@ -25,3 +25,7 @@ If your inbox is the bottleneck in your business, DM me or book a short call —
 
 <!-- graph-links -->
 Related: [[Content_Calendar]] · [[linkedin-post skill]] · [[Dashboard]]
+
+
+## Execution Result
+- 2026-07-11 10:25:14: SUCCESS: LinkedIn post published (id: urn:li:share:7481760526163824640)

@@ -1,6 +1,6 @@
 ---
 type: linkedin_post
-status: pending
+status: approved
 topic: 3 signs your business is ready for workflow automation
 created_at: 2026-07-11 09:56:00
 ---
@@ -20,3 +20,7 @@ Recognize your business in one of these signs? DM me or book a quick call and I'
 
 <!-- graph-links -->
 Related: [[Content_Calendar]] · [[linkedin-post skill]] · [[Dashboard]]
+
+
+## Execution Result
+- 2026-07-11 10:25:12: SUCCESS: LinkedIn post published (id: urn:li:share:7481760519549419520)
