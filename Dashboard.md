@@ -7,10 +7,12 @@ Last Updated: 2026-07-11
 - Pending Tasks: 0
 - In Progress: 0
 - Completed Today: 3
-- Needs My Approval: 4
+- Needs My Approval: 6
 
 ## Awaiting Approval
 
+- [FACEBOOK_python_language](Pending_Approval/FACEBOOK_python_language.md) — Facebook post draft "Why does almost every automation we build start with Python?" Flip `status: pending` to `approved`/`rejected`.
+- [INSTAGRAM_python_language](Pending_Approval/INSTAGRAM_python_language.md) — Instagram post draft on Python (image: python.org logo). Flip `status: pending` to `approved`/`rejected`.
 - [LINKEDIN_ai_employee](Pending_Approval/LINKEDIN_ai_employee.md) — LinkedIn post draft "AI Employee — what it is and why small businesses are hiring one" (scheduled 2026-07-11 11:55). Flip `status: pending` to `approved`/`rejected`.
 - [LINKEDIN_ai_employee_10_hours](Pending_Approval/LINKEDIN_ai_employee_10_hours.md) — LinkedIn post draft. Edit `status: pending` to `approved` (or `rejected`) in the frontmatter, then the approval executor handles the rest.
 - [LINKEDIN_3_signs_workflow_automation](Pending_Approval/LINKEDIN_3_signs_workflow_automation.md) — LinkedIn post draft "3 signs your business is ready for workflow automation" (scheduled 2026-07-11). Flip `status: pending` to `approved`/`rejected`.
@@ -18,6 +20,7 @@ Last Updated: 2026-07-11
 
 ## Recent Activity
 
+- 2026-07-11: Drafted Facebook + Instagram posts on the Python language → /Pending_Approval (social-post skill)
 - 2026-07-11: Drafted LinkedIn post "AI Employee — what it is and why small businesses are hiring one" (scheduled 11:55) → /Pending_Approval; added row to Content_Calendar (linkedin-post skill)
 - 2026-07-11: Drafted LinkedIn post "3 signs your business is ready for workflow automation" → /Pending_Approval (linkedin-post skill)
 - 2026-07-11: Drafted LinkedIn post "Case study: automating email triage and follow-ups with AI" → /Pending_Approval (linkedin-post skill)
