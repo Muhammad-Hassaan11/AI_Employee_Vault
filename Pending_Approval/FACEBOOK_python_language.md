@@ -33,3 +33,5 @@ What was the first thing you ever automated? Tell us below 👇
 
 
 > [!warning] Execution failed 2026-07-11 11:21:00: ERROR: Facebook: HTTP 403: {"error":{"message":"(#200) If posting to a group, requires app being installed in the group, and \\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\n          and pages_manage_posts permission with page token; If posting to a page, \\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\n          sufficient adm
+
+> [!warning] Execution failed 2026-07-11 11:43:13: ERROR: Facebook: HTTP 403: {"error":{"message":"(#200) If posting to a group, requires app being installed in the group, and \\\n          either publish_to_groups permission with user token, or both pages_read_engagement \\\n          and pages_manage_posts permission with page token; If posting to a page, \\\n          requires both pages_read_engagement and pages_manage_posts as an admin with \\\n          sufficient adm
