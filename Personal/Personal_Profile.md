@@ -11,7 +11,6 @@
 - Nothing personal is ever posted publicly or mixed into business
   deliverables without explicit approval
 
-<!-- graph-links -->
 ## Related
 
 - [[Business_Profile]] · [[Company_Handbook]]
