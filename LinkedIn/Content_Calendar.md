@@ -9,8 +9,8 @@ Add a row per post you want published:
 | Date       | Topic                                                        | Status  |
 | ---------- | ------------------------------------------------------------ | ------- |
 | 2026-07-07 | How an AI Employee saves a small business 10+ hours a week   | tasked |
-| 2026-07-09 | Case study: automating email triage and follow-ups with AI   | pending |
-| 2026-07-11 | 3 signs your business is ready for workflow automation       | pending |
+| 2026-07-09 | Case study: automating email triage and follow-ups with AI   | tasked |
+| 2026-07-11 | 3 signs your business is ready for workflow automation       | tasked |
 | 2026-07-14 | Behind the scenes: our human-in-the-loop AI approval system  | pending |
 
 ## Posting Guidelines
