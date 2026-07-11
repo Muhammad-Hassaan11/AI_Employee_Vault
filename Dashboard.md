@@ -11,8 +11,8 @@ Last Updated: 2026-07-11
 
 ## Awaiting Approval
 
-- [FACEBOOK_python_language](Pending_Approval/FACEBOOK_python_language.md) — Facebook post draft "Why does almost every automation we build start with Python?" Flip `status: pending` to `approved`/`rejected`.
-- [INSTAGRAM_python_language](Pending_Approval/INSTAGRAM_python_language.md) — Instagram post draft on Python (image: python.org logo). Flip `status: pending` to `approved`/`rejected`.
+- [FACEBOOK_python_language](Pending_Approval/FACEBOOK_python_language.md) — APPROVED but publish FAILED (Meta access token expired). Refresh the Meta token in `.env`, then re-run the approval executor.
+- [INSTAGRAM_python_language](Pending_Approval/INSTAGRAM_python_language.md) — APPROVED but publish FAILED (Meta access token expired). Refresh the Meta token in `.env`, then re-run the approval executor.
 - [LINKEDIN_ai_employee](Pending_Approval/LINKEDIN_ai_employee.md) — LinkedIn post draft "AI Employee — what it is and why small businesses are hiring one" (scheduled 2026-07-11 11:55). Flip `status: pending` to `approved`/`rejected`.
 - [LINKEDIN_ai_employee_10_hours](Pending_Approval/LINKEDIN_ai_employee_10_hours.md) — LinkedIn post draft. Edit `status: pending` to `approved` (or `rejected`) in the frontmatter, then the approval executor handles the rest.
 - [LINKEDIN_3_signs_workflow_automation](Pending_Approval/LINKEDIN_3_signs_workflow_automation.md) — LinkedIn post draft "3 signs your business is ready for workflow automation" (scheduled 2026-07-11). Flip `status: pending` to `approved`/`rejected`.
@@ -39,6 +39,7 @@ Last Updated: 2026-07-11
 
 ## Alerts
 
+- **Meta (Facebook/Instagram) access token EXPIRED** (OAuthException 190, expired 2026-07-11 05:00 PDT): both approved Python posts failed to publish. Generate a new token in Meta Business settings, update `.env`, then re-run `Scripts/approval_executor.py`.
 - Credentials not yet configured: copy `.env.example` to `.env` and fill in Gmail, SMTP, Twilio, LinkedIn, Odoo, Meta (Facebook/Instagram), and X values to activate the watchers, senders, and MCP servers.
 - Odoo not yet running: `docker compose up -d` in /Odoo, create database "business", install Invoicing, then set ODOO_* in .env.
 - Re-run `Scripts\register_tasks.ps1` to add the new AIEmployee-WeeklyAudit scheduled task.
