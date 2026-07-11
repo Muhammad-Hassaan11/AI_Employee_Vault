@@ -6,14 +6,20 @@ Last Updated: 2026-07-11
 
 - Pending Tasks: 0
 - In Progress: 0
-- Completed Today: 1
-- Needs My Approval: 1
+- Completed Today: 3
+- Needs My Approval: 3
 
 ## Awaiting Approval
 
 - [LINKEDIN_ai_employee_10_hours](Pending_Approval/LINKEDIN_ai_employee_10_hours.md) — LinkedIn post draft. Edit `status: pending` to `approved` (or `rejected`) in the frontmatter, then the approval executor handles the rest.
+- [LINKEDIN_3_signs_workflow_automation](Pending_Approval/LINKEDIN_3_signs_workflow_automation.md) — LinkedIn post draft "3 signs your business is ready for workflow automation" (scheduled 2026-07-11). Flip `status: pending` to `approved`/`rejected`.
+- [LINKEDIN_case_study_email_triage](Pending_Approval/LINKEDIN_case_study_email_triage.md) — LinkedIn post draft "Case study: automating email triage and follow-ups with AI" (scheduled 2026-07-09). Flip `status: pending` to `approved`/`rejected`.
 
 ## Recent Activity
+
+- 2026-07-11: Drafted LinkedIn post "3 signs your business is ready for workflow automation" → /Pending_Approval (linkedin-post skill)
+- 2026-07-11: Drafted LinkedIn post "Case study: automating email triage and follow-ups with AI" → /Pending_Approval (linkedin-post skill)
+- 2026-07-11: Triaged WhatsApp from +923222547472 — Twilio sandbox join phrase ("join zulu-problem"), no reply needed; sender now connected to the sandbox
 
 - 2026-07-08: Platinum Tier build complete — two-agent cloud/local split (claim-by-move via /In_Progress, single-writer Dashboard, /Updates merge), git vault sync with secrets isolation, draft-only cloud reasoning loop + cloud-triage skill, Oracle VM bootstrap + systemd (watchdog, 30-min timer), cloud health monitoring, Odoo cloud stack (Caddy HTTPS + nightly backups), rewritten README + new START_AI_EMPLOYEE.md operator guide
 - 2026-07-08 (cloud): Platinum two-agent machinery installed: claim-by-move, vault sync, draft-only cloud loop, Oracle VM deployment, Odoo HTTPS stack — merged from /Updates as the pipeline's first live test

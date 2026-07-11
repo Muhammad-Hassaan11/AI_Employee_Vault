@@ -23,3 +23,4 @@ Save the draft to /Pending_Approval for human review — NEVER publish directly.
 
 ## Status History
 - 2026-07-11 09:51:40: Task created by linkedin watcher
+- 2026-07-11 09:56: Draft written via linkedin-post skill -> /Pending_Approval/LINKEDIN_3_signs_workflow_automation.md (status: pending, awaiting human approval)
