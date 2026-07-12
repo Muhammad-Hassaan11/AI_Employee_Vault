@@ -53,6 +53,24 @@ def parse_action_file(path: Path):
     return meta, parts[2].strip()
 
 
+def parse_post_date(value: str):
+    """Parse a post_date string into a date, or None if empty/unparseable.
+
+    Accepts the common formats humans type in the frontmatter. If a value is
+    present but can't be parsed, returns None so the item executes rather than
+    being silently held forever.
+    """
+    value = (value or "").strip()
+    if not value:
+        return None
+    for fmt in ("%Y-%m-%d", "%m/%d/%Y", "%d/%m/%Y", "%m-%d-%Y"):
+        try:
+            return datetime.strptime(value, fmt).date()
+        except ValueError:
+            continue
+    return None
+
+
 def execute_email(meta: dict, body: str) -> str:
     """Send an approved email through the same SMTP path as the MCP server."""
     sys.path.insert(0, str(VAULT_ROOT / "MCP"))
@@ -112,6 +130,15 @@ def process_pending() -> int:
             continue
         if status != "approved":
             print(f"[approval] {path.name}: still pending human review")
+            continue
+
+        # Approved-but-scheduled: only execute on or after post_date.
+        # Future-dated posts stay in place (pending) until their day arrives,
+        # so you can safely approve a whole batch at once.
+        post_date = parse_post_date(meta.get("post_date", ""))
+        if post_date and post_date > datetime.now().date():
+            print(f"[approval] {path.name}: approved but scheduled for "
+                  f"{post_date.isoformat()}, skipping until then")
             continue
 
         try:
