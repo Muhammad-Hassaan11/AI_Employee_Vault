@@ -1,10 +1,10 @@
 ---
 type: instagram_post
-status: pending
+status: approved
 domain: business
-image_url: PLACEHOLDER - add public image URL before approving (see Image Brief below)
+image_url: https://github.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/10.png
 post_date: 2026-07-15
-post_time: "13:00"
+post_time: 13:00
 created_at: 2026-07-11 12:00:00
 ---
 
@@ -21,8 +21,5 @@ Save this if you want to see the full breakdown.
 
 #AIAgents #Automation #SmallBusiness #Productivity #AIEmployee
 
-## Image Brief
-- Aspect ratio: Portrait 4:5 (1080x1350)
-- Concept: Vertical timeline graphic, 4 stops (Morning/Midday/Afternoon/Evening) each with a small icon (sunrise, pencil, checkmark shield, moon) and short label. Connecting vertical line down the center.
-- Text overlay: 4 timeline labels — "Morning: Sort Inbox" / "Midday: Draft Replies" / "Afternoon: Queue Approvals" / "Evening: Log & Update"
-- Style: Same brand system, portrait format ideal for a top-to-bottom daily timeline.
+
+> [!warning] Execution failed 2026-07-12 00:48:02: ERROR: Instagram: HTTP 400: {"error":{"message":"Only photo or video can be accepted as media type.","type":"OAuthException","code":9004,"error_subcode":2207052,"is_transient":false,"error_user_title":"Media download has failed. The media URI doesn't meet our requirements.","error_user_msg":"The media could not be fetched from this URI: https:\/\/github.com\/Muhammad-Hassaan11\/AI_Employee_Vault\/main\/Images\/10.png.Please 
