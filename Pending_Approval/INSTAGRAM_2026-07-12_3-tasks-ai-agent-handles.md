@@ -1,10 +1,10 @@
 ---
 type: instagram_post
-status: pending
+status: approved
 domain: business
-image_url: PLACEHOLDER - add public image URL before approving (see Image Brief below)
+image_url: https://raw.githubusercontent.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/1.png
 post_date: 2026-07-12
-post_time: "13:00"
+post_time: 13:00
 created_at: 2026-07-11 12:00:00
 ---
 
@@ -20,8 +20,6 @@ Which one would save you the most time? Tell us below. 👇
 
 #AIAutomation #SmallBusiness #Productivity #AIAgents #WorkSmarter
 
-## Image Brief
-- Aspect ratio: Portrait 4:5 (1080x1350)
-- Concept: Numbered list graphic, 3 stacked rows each with a simple icon (inbox tray, chat bubble with pencil, invoice/receipt) + short label.
-- Text overlay: Header "3 Tasks Your AI Agent Can Handle Today" + row labels "Inbox Triage" / "Draft Replies" / "Invoicing"
-- Style: Same brand system (navy/blue/amber), generous whitespace, large mobile-readable type.
+
+
+> [!warning] Execution failed 2026-07-12 00:11:00: ERROR: Instagram: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Saturday, 11-Jul-26 13:00:00 PDT. The current time is Sunday, 12-Jul-26 00:11:00 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AtpQul3fNuf2oFOTZVXHJt4"}}

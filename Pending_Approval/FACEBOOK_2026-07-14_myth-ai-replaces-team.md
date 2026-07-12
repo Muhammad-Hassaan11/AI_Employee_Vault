@@ -3,8 +3,9 @@ type: facebook_post
 status: pending
 domain: business
 post_date: 2026-07-14
-post_time: "09:00"
+post_time: 09:00
 created_at: 2026-07-11 12:00:00
+image_url: https://raw.githubusercontent.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/7.png
 ---
 
 Myth: bringing in AI automation means cutting people.
@@ -13,8 +14,4 @@ What we actually see: the businesses getting the most out of this are using AI t
 
 And every action still runs through a human approval step before anything sends, posts, or pays. It's not a replacement for your team. It's the assistant most small businesses could never afford to hire.
 
-## Image Brief
-- Aspect ratio: Square 1:1 (1080x1080) — same creative as the Instagram version
-- Concept: "Myth vs Reality" card. Top half "MYTH" label with strikethrough text "AI replaces your team" (muted red/grey tone). Bottom half "REALITY" label with "AI removes the busywork" (brand blue tone). Clear visual split between halves.
-- Text overlay: "MYTH: AI replaces your team" / "REALITY: AI removes the busywork"
-- Style: Bold, legible at small sizes — this template repeats for the week's other myth-busting posts for series consistency.
+

@@ -19,7 +19,6 @@ study notes, non-business files.
 Shared components (watchers, approval workflow, dashboard, logs) serve
 both domains; business records live in /Business, personal in /Personal.
 
-<!-- graph-links -->
 ## Related
 
 - [[Personal_Profile]] · [[Company_Handbook]] · [[Content_Calendar]] · [[Dashboard]]

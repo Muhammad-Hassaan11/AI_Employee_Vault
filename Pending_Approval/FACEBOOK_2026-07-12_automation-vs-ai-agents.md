@@ -1,6 +1,6 @@
 ---
 type: facebook_post
-status: pending
+status: approved
 domain: business
 post_date: 2026-07-12
 post_time: 18:00
@@ -15,3 +15,5 @@ Not quite. Traditional automation follows a fixed rule: if X happens, do Y, ever
 Most businesses end up using both: automation for the repetitive stuff, agents for the parts that used to need a judgment call. Want a plain-English breakdown for your business specifically? Send us a message.
 
 
+
+> [!warning] Execution failed 2026-07-12 00:10:58: ERROR: Facebook: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Saturday, 11-Jul-26 13:00:00 PDT. The current time is Sunday, 12-Jul-26 00:10:59 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"A0VhhHvIscfYigOLrxGJO7S"}}

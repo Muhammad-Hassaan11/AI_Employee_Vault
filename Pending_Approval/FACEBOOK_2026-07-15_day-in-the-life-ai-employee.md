@@ -3,8 +3,9 @@ type: facebook_post
 status: pending
 domain: business
 post_date: 2026-07-15
-post_time: "13:00"
+post_time: 13:00
 created_at: 2026-07-11 12:00:00
+image_url: https://github.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/10.png
 ---
 
 A day in the life of an AI Employee:
@@ -16,8 +17,4 @@ Evening — logs everything it did and updates the dashboard, ready for tomorrow
 
 You stay the decision-maker the entire time. It just handles everything leading up to the decision. Want the full breakdown for your business? Send us a message.
 
-## Image Brief
-- Aspect ratio: Portrait 4:5 (1080x1350) — same creative as the Instagram version
-- Concept: Vertical timeline graphic, 4 stops (Morning/Midday/Afternoon/Evening) each with a small icon (sunrise, pencil, checkmark shield, moon) and short label. Connecting vertical line down the center.
-- Text overlay: 4 timeline labels — "Morning: Sort Inbox" / "Midday: Draft Replies" / "Afternoon: Queue Approvals" / "Evening: Log & Update"
-- Style: Same brand system, portrait format ideal for a top-to-bottom daily timeline.
+

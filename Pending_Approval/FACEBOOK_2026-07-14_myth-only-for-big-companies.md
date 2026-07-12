@@ -3,8 +3,9 @@ type: facebook_post
 status: pending
 domain: business
 post_date: 2026-07-14
-post_time: "13:00"
+post_time: 13:00
 created_at: 2026-07-11 12:00:00
+image_url: https://raw.githubusercontent.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/8.png
 ---
 
 Myth: you need an enterprise-size budget to use AI automation.
@@ -13,8 +14,3 @@ Reality: a done-for-you AI Employee setup is priced for small businesses specifi
 
 If you've been waiting for automation to become "affordable enough" before looking into it, it already has. Message us for pricing — no obligation, just honest numbers.
 
-## Image Brief
-- Aspect ratio: Portrait 4:5 (1080x1350) — same creative as the Instagram version
-- Concept: "Myth vs Reality" card (same template as prior post). Top "MYTH: Enterprise budget only" (muted tone). Bottom "REALITY: Built for small business" (brand blue tone).
-- Text overlay: "MYTH: Enterprise budget only" / "REALITY: Built for small business"
-- Style: Same brand system; portrait format works well if repurposed as a Story/Reel cover.

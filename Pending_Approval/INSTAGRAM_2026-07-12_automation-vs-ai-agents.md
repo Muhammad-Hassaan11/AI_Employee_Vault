@@ -1,10 +1,10 @@
 ---
 type: instagram_post
-status: pending
+status: approved
 domain: business
-image_url: PLACEHOLDER - add public image URL before approving (see Image Brief below)
+image_url: https://raw.githubusercontent.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/2.png
 post_date: 2026-07-12
-post_time: "18:00"
+post_time: 18:00
 created_at: 2026-07-11 12:00:00
 ---
 
@@ -18,8 +18,6 @@ DM us — we'll map it to your business in 15 minutes.
 
 #Automation #AIAgents #AIforBusiness #SmallBusiness #Efficiency
 
-## Image Brief
-- Aspect ratio: Landscape 1.91:1 (1200x628)
-- Concept: Two-column comparison graphic. Left "AUTOMATION" with a straight arrow icon (If X → Y). Right "AI AGENT" with a branching/decision-node icon (Reads → Decides → Acts). Center divider line.
-- Text overlay: Column headers "AUTOMATION" / "AI AGENT" + short flow labels under each
-- Style: Navy background, white text, blue accent (automation column) vs amber accent (agent column).
+
+
+> [!warning] Execution failed 2026-07-12 00:11:00: ERROR: Instagram: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Saturday, 11-Jul-26 13:00:00 PDT. The current time is Sunday, 12-Jul-26 00:11:00 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AUEjIiu_5oWQ1iSdgqh9uQk"}}
