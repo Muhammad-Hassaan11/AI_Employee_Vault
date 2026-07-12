@@ -6,11 +6,12 @@ Last Updated: 2026-07-11
 
 - Pending Tasks: 0
 - In Progress: 0
-- Completed Today: 3
-- Needs My Approval: 6
+- Completed Today: 6
+- Needs My Approval: 48
 
 ## Awaiting Approval
 
+- **7-day IG/FB content calendar (2026-07-12 → 2026-07-18)**: 42 drafts (21 topics x Instagram + Facebook) on AI agents/automation, in `/Pending_Approval` as `INSTAGRAM_*` / `FACEBOOK_*`. Overview + image briefs: [[Social_Content_Calendar]]. Each `instagram_post` file needs a real `image_url` filled in (built from its Image Brief) before you flip `status` to `approved` — no image-generation tool is available to Atlas, so only text drafts + design briefs were produced.
 - [FACEBOOK_python_language](Pending_Approval/FACEBOOK_python_language.md) — APPROVED but publish FAILED (Meta access token expired). Refresh the Meta token in `.env`, then re-run the approval executor.
 - [INSTAGRAM_python_language](Pending_Approval/INSTAGRAM_python_language.md) — APPROVED but publish FAILED (Meta access token expired). Refresh the Meta token in `.env`, then re-run the approval executor.
 - [LINKEDIN_ai_employee](Pending_Approval/LINKEDIN_ai_employee.md) — LinkedIn post draft "AI Employee — what it is and why small businesses are hiring one" (scheduled 2026-07-11 11:55). Flip `status: pending` to `approved`/`rejected`.
@@ -20,6 +21,8 @@ Last Updated: 2026-07-11
 
 ## Recent Activity
 
+- 2026-07-11 (local): Triaged 3 gmail tasks claimed into /In_Progress/local — Instagram recovery-code notification, Skool weekly digest, Alison Courses marketing email — all informational, no reply/action needed, closed to /Done (process-task skill)
+- 2026-07-11: Built 7-day Instagram + Facebook content calendar (2026-07-12 to 2026-07-18, 3 posts/day on AI agents/automation) → 42 drafts in /Pending_Approval + [[Social_Content_Calendar]] overview with per-post image briefs (1:1 / 4:5 / 1.91:1 rotation); image files themselves were not generated (no image tool available) (social-post skill)
 - 2026-07-11: Drafted Facebook + Instagram posts on the Python language → /Pending_Approval (social-post skill)
 - 2026-07-11: Drafted LinkedIn post "AI Employee — what it is and why small businesses are hiring one" (scheduled 11:55) → /Pending_Approval; added row to Content_Calendar (linkedin-post skill)
 - 2026-07-11: Drafted LinkedIn post "3 signs your business is ready for workflow automation" → /Pending_Approval (linkedin-post skill)
@@ -48,4 +51,4 @@ Last Updated: 2026-07-11
 <!-- graph-links -->
 ## Related
 
-- [[Company_Handbook]] · [[README]] · [[CLAUDE]] · [[Business_Profile]] · [[Personal_Profile]] · [[Content_Calendar]] · [[Skills_Index]]
+- [[Company_Handbook]] · [[README]] · [[CLAUDE]] · [[Business_Profile]] · [[Personal_Profile]] · [[Content_Calendar]] · [[Social_Content_Calendar]] · [[Skills_Index]]
