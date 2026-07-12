@@ -20,4 +20,8 @@ DM us "AGENT" and we'll walk you through what one could handle in your business.
 
 
 
-> [!warning] Execution failed 2026-07-12 00:11:00: ERROR: Instagram: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Saturday, 11-Jul-26 13:00:00 PDT. The current time is Sunday, 12-Jul-26 00:11:01 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AfIM4cLrqM2c87PVLDajDHy"}}
+
+
+
+## Execution Result
+- 2026-07-12 00:33:00: SUCCESS: Instagram post published (id: 18094837496374180)

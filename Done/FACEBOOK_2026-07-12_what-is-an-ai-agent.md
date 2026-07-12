@@ -15,4 +15,8 @@ Think less "smart chatbot," more "employee that never sleeps." That's the shift 
 If you want to see what that looks like in practice, send us a message — happy to walk you through a real example.
 
 
-> [!warning] Execution failed 2026-07-12 00:10:59: ERROR: Facebook: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Saturday, 11-Jul-26 13:00:00 PDT. The current time is Sunday, 12-Jul-26 00:11:00 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AFsOCdG-FlXw5li-y6AypuJ"}}
+
+
+
+## Execution Result
+- 2026-07-12 00:32:33: SUCCESS: Facebook post published (id: 1241762589017592_122106229557385484)

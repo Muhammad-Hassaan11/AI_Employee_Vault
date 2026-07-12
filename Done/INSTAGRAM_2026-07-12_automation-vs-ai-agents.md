@@ -20,4 +20,8 @@ DM us — we'll map it to your business in 15 minutes.
 
 
 
-> [!warning] Execution failed 2026-07-12 00:11:00: ERROR: Instagram: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Saturday, 11-Jul-26 13:00:00 PDT. The current time is Sunday, 12-Jul-26 00:11:00 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AUEjIiu_5oWQ1iSdgqh9uQk"}}
+
+
+
+## Execution Result
+- 2026-07-12 00:32:52: SUCCESS: Instagram post published (id: 17914314378220823)
