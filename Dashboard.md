@@ -1,12 +1,12 @@
 # AI Employee Dashboard
 
-Last Updated: 2026-07-12
+Last Updated: 2026-07-13
 
 ## Quick Status
 
 - Pending Tasks: 0
 - In Progress: 0
-- Completed Today: 6
+- Completed Today: 9
 - Needs My Approval: 48
 
 ## Awaiting Approval
@@ -21,6 +21,7 @@ Last Updated: 2026-07-12
 
 ## Recent Activity
 
+- 2026-07-13 (local): Triaged 9 gmail tasks from /In_Progress/local — 2 Google security notifications (password changed + account recovered for muhammadhassaan.h1@gmail.com; flagged in Alerts for owner verification) and 7 routine promo/notification emails (Twilio ×2, onic/SurveyMonkey survey, foodpanda promo, Duolingo reminder, Apollo support-change notice, Reddit digest). No replies needed (all no-reply senders); nothing sent; all closed to /Done (process-task skill)
 - 2026-07-11 (local): Triaged 3 gmail tasks claimed into /In_Progress/local — Instagram recovery-code notification, Skool weekly digest, Alison Courses marketing email — all informational, no reply/action needed, closed to /Done (process-task skill)
 - 2026-07-11: Built 7-day Instagram + Facebook content calendar (2026-07-12 to 2026-07-18, 3 posts/day on AI agents/automation) → 42 drafts in /Pending_Approval + [[Social_Content_Calendar]] overview with per-post image briefs (1:1 / 4:5 / 1.91:1 rotation); image files themselves were not generated (no image tool available) (social-post skill)
 - 2026-07-11: Drafted Facebook + Instagram posts on the Python language → /Pending_Approval (social-post skill)
@@ -42,6 +43,7 @@ Last Updated: 2026-07-12
 
 ## Alerts
 
+- **Google account security check (owner action)**: Google reports the password for muhammadhassaan.h1@gmail.com was CHANGED and the account was RECOVERED on 2026-07-12 ~08:55 GMT (recovery email muhammadhass745@gmail.com). If this was you, no action needed. If not, secure the account immediately — go directly to https://myaccount.google.com/notifications (type the URL yourself; don't click email links) and review recent security activity. FYI: Apollo free tier loses live-agent support from 2026-07-14 (upgrade = paid, owner decision).
 - **Meta (Facebook/Instagram) access token EXPIRED** (OAuthException 190, expired 2026-07-11 05:00 PDT): both approved Python posts failed to publish. Generate a new token in Meta Business settings, update `.env`, then re-run `Scripts/approval_executor.py`.
 - Credentials not yet configured: copy `.env.example` to `.env` and fill in Gmail, SMTP, Twilio, LinkedIn, Odoo, Meta (Facebook/Instagram), and X values to activate the watchers, senders, and MCP servers.
 - Odoo not yet running: `docker compose up -d` in /Odoo, create database "business", install Invoicing, then set ODOO_* in .env.
