@@ -23,3 +23,5 @@ Save this if you want to see the full breakdown.
 
 
 
+
+> [!warning] Execution failed 2026-07-15 00:09:32: ERROR: Instagram: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Sunday, 12-Jul-26 02:00:00 PDT. The current time is Wednesday, 15-Jul-26 00:09:31 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AK6T3dlYEKyOMzGq9_fFhCF"}}

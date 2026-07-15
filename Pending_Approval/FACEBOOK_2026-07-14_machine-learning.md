@@ -1,6 +1,6 @@
 ---
 type: facebook_post
-status: pending
+status: approved
 domain: business
 image_url: https://raw.githubusercontent.com/Muhammad-Hassaan11/AI_Employee_Vault/main/Images/7.png
 post_date: 2026-07-14
@@ -20,3 +20,5 @@ That's exactly what we build: AI that learns your business and quietly does the 
 Curious where machine learning could save you a few hours a week? Drop a comment and let's talk. 👇
 
 #MachineLearning #AI #SmallBusiness #Automation
+
+> [!warning] Execution failed 2026-07-15 00:09:31: ERROR: Facebook: HTTP 400: {"error":{"message":"Error validating access token: Session has expired on Sunday, 12-Jul-26 02:00:00 PDT. The current time is Wednesday, 15-Jul-26 00:09:30 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AqvlK53QO1d-6s1oeW1MJdK"}}
