@@ -12,7 +12,7 @@ Add a row per post you want published:
 | 2026-07-09 | Case study: automating email triage and follow-ups with AI                       | tasked  |
 | 2026-07-11 | 3 signs your business is ready for workflow automation                           | tasked  |
 | 2026-07-11 | AI Employee — what it is and why small businesses are hiring one (post at 11:55) | tasked  |
-| 2026-07-14 | Behind the scenes: our human-in-the-loop AI approval system                      | pending |
+| 2026-07-14 | Behind the scenes: our human-in-the-loop AI approval system                      | drafted |
 
 ## Posting Guidelines
 
